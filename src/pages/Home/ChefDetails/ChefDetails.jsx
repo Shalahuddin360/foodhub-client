@@ -11,7 +11,7 @@ const ChefDetails = () => {
     return (
         <Container>
             {/* <h1>This chef: {id}</h1> */}
-            <h1>This chef recipes: {chefRecipes.length}</h1>
+            <h1 className='text-center'>This chef recipes: {chefRecipes.length}</h1>
 
 
             <Row xs={1} md={2} lg={3} className='g-4 mt-5'>

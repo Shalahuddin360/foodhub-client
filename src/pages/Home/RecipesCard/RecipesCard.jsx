@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
+import { Button, ButtonGroup, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const RecipesCard = ({ recipes }) => {
     // console.log(recipes)
-    const { recipe_name, ingredients, methodOfCooking, rating, author } = recipes
+    const {recipe_id, recipe_name, ingredients, methodOfCooking, rating, author } = recipes
     return (
         <Container> 
             <Row>
@@ -28,11 +28,13 @@ const RecipesCard = ({ recipes }) => {
                                 <p className='fw-semibold'>{ingredients}</p>
                                 <p className='fw-bold'>Method Of Cooking</p>
                                 <p className='fw-semibold'>
-                                    {methodOfCooking < 250 ? {methodOfCooking} : <>{methodOfCooking.slice(0,250)}.. <br /><Link to={'/recipes/${recipe_id}'}>Read More</Link></>}
+                                    {  methodOfCooking < 250 ? {methodOfCooking} : <>{methodOfCooking.slice(0,250)}...
+                                    <Link to={`/recipes/${recipe_id}`}>Read More </Link></> }
                                     
                               </p>
+                            
+                              <Button className='text-center' variant="outline-primary"><Link to={`/recipes/${recipe_id}`} className='text-danger'>Chef Details </Link></Button>
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                         <Card.Footer className="text-muted d-flex">
                             <div className='flex-grow-1'>
