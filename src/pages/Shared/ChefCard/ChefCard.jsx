@@ -14,7 +14,7 @@ const ChefCard = (props) => {
         <Card.Body>
           <Card.Title>Name: {chef_name}</Card.Title>
           <Card.Text>
-           <p className='fw-semibold'>Experience:<span className='text-warning text ms-3'>{yearsOfExperience} Year</span> </p>
+           <p className='fw-semibold'>Experience:<span className='text-warning text ms-3'>{yearsOfExperience}</span> Year</p>
            <p className='fw-semibold'>Number Of Recipes : <span className='text-warning ms-3'>{numberOfRecipes}</span> </p>
            <p className='fw-semibold'>Likes :<span className='text-warning ms-3'> {likes}</span></p>
           </Card.Text>
