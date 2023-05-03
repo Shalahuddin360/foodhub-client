@@ -3,7 +3,7 @@ import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 const Header = () => {
     return (
-        <Container>
+        <Container className='mt-4'>
             <div className='d-flex align-items-center'>
                 <Button variant='danger'>Latest</Button>
                 <Marquee className='text-danger' pauseOnHover={true} speed={50}>
