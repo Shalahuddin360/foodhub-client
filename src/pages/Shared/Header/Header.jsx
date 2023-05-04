@@ -40,11 +40,7 @@ const Header = () => {
                   <Link to="/login"><Button variant="primary">Login</Button></Link>
 
                 }
-        
-
-              <Nav.Link eventKey={2} href="#memes">
-                <Button variant="primary">Registration</Button>
-              </Nav.Link>
+               <Link to="/register"><Button variant="primary">Registration</Button></Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
