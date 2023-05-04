@@ -3,8 +3,10 @@ import { Button, Container, Nav, NavDropdown, NavLink, Navbar } from 'react-boot
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+
+
 const Header = () => {
-  const { user , logOut } = useContext(AuthContext)
+  const { user , logOut } = useContext(AuthContext);
   const handleLogOut =()=>{
      logOut()
 

@@ -24,11 +24,13 @@ const Home = () => {
                     <Card className="bg-dark text-white">
                         <Card.Img src={banner} alt="Card image" />
                         <Card.ImgOverlay>
-                            <Card.Title>Card title</Card.Title>
+                            <Card.Title>Food Hub  Ready For Online Order</Card.Title>
                             <Card.Text>
 
                             </Card.Text>
-                            <Card.Text>Last updated 3 mins ago</Card.Text>
+                            <Card.Text>
+                                <h2>Best Selling And Trusted site ???</h2>
+                            </Card.Text>
                         </Card.ImgOverlay>
                     </Card>
 
