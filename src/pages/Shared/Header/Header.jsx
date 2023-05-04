@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
-import Marquee from "react-fast-marquee";
+import { Button, Container, Nav, NavDropdown, NavLink, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
@@ -18,12 +17,6 @@ const Header = () => {
   }
   return (
     <Container className='mt-4'>
-      <div className='d-flex align-items-center'>
-        <Button variant='danger'>Latest</Button>
-        <Marquee className='text-danger' pauseOnHover={true} speed={50}>
-          I can be a React component, multiple React components, or just some text............... I can be a React component, multiple React components, or just some text.
-        </Marquee>
-      </div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
         <Container>
@@ -31,8 +24,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
-             <Link to="/" >Home</Link>
-             <Link to="/blog" >Blog </Link>
+             <Link className='text-decoration-none fw-bold text-white' to="/">Home</Link>
+
+             <Link className='text-decoration-none fw-bold ms-5 text-white' to="/blog" >Blog </Link>
+
             </Nav>
          
             <Nav>
@@ -44,11 +39,11 @@ const Header = () => {
                  }
   
                 {user ?
-                  <Button onClick={handleLogOut} variant="primary">Log Out</Button> :
-                  <Link to="/login"><Button variant="primary">Login</Button></Link>
+                  <Button onClick={handleLogOut} variant="outline-primary">Log Out</Button> :
+                  <Link to="/login"><Button variant="outline-primary"className='me-3 fw-bold text-white' >Login</Button></Link>
 
                 }
-               <Link to="/register"><Button variant="primary">Registration</Button></Link>
+               <Link to="/register"><Button variant="outline-primary" className='fw-bold text-white'>Registration</Button></Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

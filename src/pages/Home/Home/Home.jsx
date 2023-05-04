@@ -5,6 +5,8 @@ import foodPic1 from "../../../assets/slider-1.jpg"
 import foodPic2 from "../../../assets/slider-2.jpg"
 import foodPic3 from "../../../assets/slider-3.jpg"
 import ChefCard from '../../Shared/ChefCard/ChefCard';
+import service from '../../../assets/service.jpg'
+import images from '../../../assets/images.jpeg'
 const Home = () => {
 
     const [chefs, setChefs] = useState([]);
@@ -16,19 +18,15 @@ const Home = () => {
     }, [])
     return (
 
-        <Container className=''>
+        <Container className=' '>
             <Row className='mb-4'>
                 <Col>
-                    <h2 className='text-center'>Banner Details</h2>
-                    <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sint voluptas aut nam, dolores id necessitatibus qui molestiae perspiciatis, eaque cum dolorem. Voluptas iure perferendis, debitis molestiae veritatis dolorem alias.</p>
-
                     <Card className="bg-dark text-white">
                         <Card.Img src={banner} alt="Card image" />
                         <Card.ImgOverlay>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.
+
                             </Card.Text>
                             <Card.Text>Last updated 3 mins ago</Card.Text>
                         </Card.ImgOverlay>
@@ -38,10 +36,37 @@ const Home = () => {
                 </Col>
             </Row>
 
-            <Row className='mb-4'>
+            <Row xs={1} md={2} lg={2}>
+                <Col lg={4}>
+
+                <Card.Img src={service} alt="Card image" />
+                <Card.Img src={images} alt="Card image" />
+
+                </Col>
+                <Col lg={8}>
+                 
+                   <div className='fw-semibold'>
+                   <h2>Traditional Service</h2>
+                     <p>1.Our service boys are responsible for taking orders from customers, serving food and beverages, clearing tables, and ensuring that the restaurant is clean and well-maintained.</p>
+                     <p>2.Tips: In Indian restaurants, it is common for customers to leave a tip for the food service boy, usually around 10-15% of the bill. These tips are an important source of income for food service boys, and they are often shared with other members of the restaurant staff.</p>
+                     <p>3.Tips: In Indian restaurants, it is common for customers to leave a tip for the food service boy, usually around 10-15% of the bill. These tips are an important source of income for food service boys, and they are often shared with other members of the restaurant staff.</p>
+                   </div>
+                    
+                    <div className='fw-semibold'>
+                    <h2>Vip Service</h2>
+                        <p>1.Our service boys are responsible for taking orders from customers, serving food and beverages, clearing tables, and ensuring that the restaurant is clean and well-maintained.</p>
+
+                        <p>2.Uniform: In Our restaurant, food service boys wear traditional Indian attire, such as a kurta-pajama, while in others they may wear a uniform that identifies them as part of the restaurant staff.</p>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row className='mb-4 mt-4'>
                 <Col>
-                    <h2 className='text-center'>Food Details</h2>
-                    <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sint voluptas aut nam, dolores id necessitatibus qui molestiae perspiciatis, eaque cum dolorem. Voluptas iure perferendis, debitis molestiae veritatis dolorem alias.</p>
+                    <h2 className='text-center'> Online Order For Food Details</h2>
+                    <p className='fw-bold text-center'>Delicious, Fresh, and Authentic Indian Cuisine</p>
+
+                    <p className='text-center fw-bold text-dark'>Our service boys are responsible for taking orders from customers, serving food and beverages, clearing tables, and ensuring that the restaurant is clean and well-maintained.</p>
                     <Carousel variant="dark">
                         <Carousel.Item>
                             <img
@@ -50,8 +75,8 @@ const Home = () => {
                                 alt="First slide"
                             />
                             <Carousel.Caption>
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <h5 className='fw-bold text-white'> Foo Hub Menu 1 </h5>
+                                <p className='fw-bold text-white'>Delicious, Fresh, and Authentic Indian Cuisine</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -61,8 +86,8 @@ const Home = () => {
                                 alt="Second slide"
                             />
                             <Carousel.Caption>
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h5 className='fw-bold text-white'> Foo Hub Menu 2 </h5>
+                                <p className='fw-bold text-white'>Delicious, Fresh, and Authentic Indian Cuisine</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -72,10 +97,8 @@ const Home = () => {
                                 alt="Third slide"
                             />
                             <Carousel.Caption>
-                                <h5>Third slide label</h5>
-                                <p>
-                                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                                </p>
+                                <h5 className='fw-bold text-white'> Foo Hub Menu 3 </h5>
+                                <p className='fw-bold text-white'>Delicious, Fresh, and Authentic Indian Cuisine</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
@@ -83,8 +106,8 @@ const Home = () => {
                 </Col>
             </Row>
             <Container>
-            <h2 className='text-center'>The Simply Recipes Team</h2>
-                    <p className='text-center'>Simply Recipes is a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. We’re supported by a group of recipe developers, food writers, recipe and product testers, photographers, and other creative professionals.</p>
+                <h2 className='text-center'>The Simply Recipes Team</h2>
+                <p className='text-center'>Simply Recipes is a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. We’re supported by a group of recipe developers, food writers, recipe and product testers, photographers, and other creative professionals.</p>
                 <Row xs={1} md={2} lg={3} className='g-4'>
 
                     {
