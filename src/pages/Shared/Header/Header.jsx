@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 const Header = () => {
-  const { user } = useContext(AuthContext)
+  const { user , logOut } = useContext(AuthContext)
+  const handleLogOut =()=>{
+     logOut()
+
+     .then(result=>{
+      console.log(result.user)
+     })
+     .catch(error =>{
+      console.log(error)
+     })
+  }
   return (
     <Container className='mt-4'>
       <div className='d-flex align-items-center'>
@@ -36,7 +46,7 @@ const Header = () => {
                  }
   
                 {user ?
-                  <Button variant="primary">Log Out</Button> :
+                  <Button onClick={handleLogOut} variant="primary">Log Out</Button> :
                   <Link to="/login"><Button variant="primary">Login</Button></Link>
 
                 }
