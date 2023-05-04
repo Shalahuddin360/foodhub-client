@@ -6,6 +6,8 @@ import Recipes from "../pages/Recipes/Recipes";
 import Login from "../pages/Home/Login/Login";
 import Register from "../pages/Home/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import Terms from "../pages/Shared/Terms/Terms";
+import Blog from "../pages/Home/Home/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -26,14 +28,23 @@ const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
+                path:'/terms',
+                element:<Terms></Terms>
+
+            },
+            {
+              path:'/blog',
+              element:<Blog></Blog>
+            },
+            {
                 path: '/chef/:id',
                 element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
-                loader :({params})=> fetch(`http://localhost:5000/chef/${params.id}`)
+                loader :({params})=> fetch(`https://the-foodhub-server-shalahuddin360.vercel.app/chef/${params.id}`)
             },
             {
                 path:'/recipes/:id',
                 element:<Recipes></Recipes>,
-                loader:({params})=>fetch(`http://localhost:5000/recipes/${params.id}`)
+                loader:({params})=>fetch(`https://the-foodhub-server-shalahuddin360.vercel.app/recipes/${params.id}`)
                     
                 
             }

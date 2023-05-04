@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn,signInWithGoogle ,signInWithGithub} = useContext(AuthContext);
     const navigate = useNavigate();
     const [error,setError] = useState('');
     const [success,setSuccess] = useState('');
@@ -39,7 +39,32 @@ const Login = () => {
         })
         // console.log(email,password)
     }
-    
+    const handleGoogleSignIn =()=>{
+        setError('')
+        setSuccess('')
+        signInWithGoogle()
+        .then(result=>{
+            const googleUser = result.user;
+             console.log(googleUser)
+             setSuccess('Google Sign In succesfully')
+           
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
+    }
+ const handleGithubSignIn =()=>{
+    signInWithGithub()
+    .then(result=>{
+        const githubUser =result.user;
+        console.log(githubUser)
+        setSuccess('Google Sign In succesfully')
+
+    })
+    .catch(error=>{
+        setError(error.message)
+    })
+ }
     return (
         <Container className='w-50 mx-auto'>
             <h3 className='mb-3'> Please Login !!!!!</h3>
@@ -67,7 +92,17 @@ const Login = () => {
                 <Form.Text className="text-danger">
                   <p className='text-danger fw-bold' >{error}</p>
                </Form.Text>
+       
             </Form>
+            <br />
+               <Button onClick={handleGoogleSignIn} variant="primary" className='fw-semibold' type="submit">
+                    Sign In With Google
+                </Button>
+                <Button onClick={handleGithubSignIn} className='ms-4 fw-semibold' variant="primary" type="submit">
+                    Login with Github
+                </Button>
+                <p className='text-primary fw-bold' >{success}</p>
+                <p className='text-danger fw-bold' >{error}</p>
         </Container>
     );
 };

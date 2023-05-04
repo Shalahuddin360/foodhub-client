@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Image, Row } from 'react-bootstrap';
-import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const RecipesCard = ({ recipes }) => {
     // console.log(recipes)
@@ -36,11 +37,12 @@ const RecipesCard = ({ recipes }) => {
                               <Button className='text-center' variant="outline-primary"><Link to={`/recipes/${recipe_id}`} className='text-danger'>Chef Details </Link></Button>
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted d-flex">
+                        <Card.Footer className="text-muted d-flex align-items-center">
                             <div className='flex-grow-1'>
-                                <Rating className='text-warning'>
-                                    
-                                </Rating>
+                            <Rating 
+                            style={{ maxWidth: 200 }} 
+                            value={Math.round(rating || 0)} readonly />
+
                             </div>
                             <div>
                             <span className='fw-semibold text-warning'>{rating}</span>
