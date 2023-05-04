@@ -1,1 +1,11 @@
 "# b7a10-chef-recipe-hunter-client-side-Shalahuddin360" 
+-Navbar
+-banner
+-chef section
+-recipes section
+-recipes details 
+-footer section
+-blog section
+-error page 
+- question answer of react 
+- our live  website link https://the-foodhub-with-firebase.web.app/

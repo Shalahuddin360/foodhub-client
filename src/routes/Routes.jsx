@@ -8,6 +8,7 @@ import Register from "../pages/Home/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import Terms from "../pages/Shared/Terms/Terms";
 import Blog from "../pages/Home/Home/Blog/Blog";
+import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
                 loader:({params})=>fetch(`https://the-foodhub-server-shalahuddin360.vercel.app/recipes/${params.id}`)
                     
                 
+            },
+            {
+                path:'/*',
+                element:<ErrorPage></ErrorPage>
             }
 
         ]

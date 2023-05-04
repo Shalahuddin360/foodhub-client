@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
 const Blog = () => {
@@ -46,6 +46,8 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <h3>Here is PDF Document</h3>
+      <Button variant="primary">Pdf Download</Button>
         </Container>
     );
 };
