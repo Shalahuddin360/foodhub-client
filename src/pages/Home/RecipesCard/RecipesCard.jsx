@@ -14,7 +14,7 @@ const RecipesCard = ({ recipes }) => {
         <Container>
             <Row>
                 <Col>
-                    <Card className=" shadow-lg p-3">
+                    <Card className=" shadow-lg p-3 bg-body-tertiary rounded">
 
                         <Card.Header className=' d-flex align-items-center'>
 

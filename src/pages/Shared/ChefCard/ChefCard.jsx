@@ -6,10 +6,10 @@ const ChefCard = (props) => {
     const { chef } = props
     const { chef_id, chef_name, chefPicture, chef_description, numberOfRecipes, yearsOfExperience, likes
     } = chef
-    console.log(props.chef)
+    // console.log(props.chef)
     return (
-        <CardGroup>
-      <Card>
+    <CardGroup className='shadow-lg p-3 bg-body-tertiary rounded'>
+      <Card >
         <Card.Img className='object-fit-cover border rounded' variant="top" src={chefPicture} />
         <Card.Body>
           <Card.Title>Name: {chef_name}</Card.Title>

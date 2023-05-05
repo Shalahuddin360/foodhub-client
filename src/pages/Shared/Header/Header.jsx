@@ -40,8 +40,8 @@ const Header = () => {
                  }
   
                 {user ?
-                 <span className='text-white'>{user?.displayName}<Card.Img variant="top"style={{ width: '40px' }} src={user.photoURL} /> <Button onClick={handleLogOut} variant="outline-primary">Log Out</Button></span> :
-                  <Link to="/login"><Button variant="outline-primary"className='me-3 fw-bold text-white' >Login</Button></Link>
+                 <span  className='text-white'>{user?.displayName}<Card.Img variant="top"title={user?.displayName} style={{ width: '40px' }} src={user.photoURL} className='mx-4 rounded-circle' /> <Button onClick={handleLogOut} variant="outline-primary" className='mx-4' >Log Out</Button></span> :
+                <Link to="/login"><Button variant="outline-primary"className='me-3 fw-bold text-white' >Login</Button></Link>
 
                 }
                <Link to="/register"><Button variant="outline-primary" className='fw-bold text-white'>Registration</Button></Link>
