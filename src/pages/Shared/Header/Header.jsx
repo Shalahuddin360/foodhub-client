@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, NavDropdown, NavLink, Navbar } from 'react-bootstrap';
+import { Button, Card, Container, Nav, NavDropdown, NavLink, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
-
+import { FaPray, FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
   const { user , logOut } = useContext(AuthContext);
@@ -41,7 +40,7 @@ const Header = () => {
                  }
   
                 {user ?
-                  <Button onClick={handleLogOut} variant="outline-primary">Log Out</Button> :
+                 <span className='text-white'>{user?.displayName}<Card.Img variant="top"style={{ width: '40px' }} src={user.photoURL} /> <Button onClick={handleLogOut} variant="outline-primary">Log Out</Button></span> :
                   <Link to="/login"><Button variant="outline-primary"className='me-3 fw-bold text-white' >Login</Button></Link>
 
                 }

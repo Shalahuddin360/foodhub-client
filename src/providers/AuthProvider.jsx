@@ -27,16 +27,21 @@ const AuthProvider = ({children}) => {
         // }
     // logout     
      const logOut =()=>{
+        setLoading(true);
           return  signOut(auth);
-          setLoading(true);
+         
         }
 
     // sign in with google 
     const signInWithGoogle =()=>{
+        setLoading(true);
       return  signInWithPopup(auth,googleAuthProvider)
+ 
+      
     }
     // sign in with Github
     const signInWithGithub =()=>{
+        setLoading(true);
        return  signInWithPopup(auth,githubAuthProvider);
     }
  useEffect(()=>{
