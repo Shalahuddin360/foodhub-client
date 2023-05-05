@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaPray, FaUserCircle } from 'react-icons/fa';
 
+
 const Header = () => {
   const { user , logOut } = useContext(AuthContext);
   const handleLogOut =()=>{
@@ -27,11 +28,11 @@ const Header = () => {
             <Nav className="mx-auto">
              <Link className='text-decoration-none fw-bold text-white' to="/">Home</Link>
 
-             <Link className='text-decoration-none fw-bold ms-5 text-white' to="/blog" >Blog </Link>
+             <Link  className='text-decoration-none fw-bold ms-5 text-white' to="/blog" >Blog</Link>
 
             </Nav>
          
-            <Nav>
+            <Nav >
               {
                 user && 
 

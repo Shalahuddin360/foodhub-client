@@ -24,7 +24,7 @@ const ChefDetails = () => {
                 <Col>
                     <Card className="text-center">
                         <Card.Header>
-                            <Card.Img className='object-fit-cover' variant="top" src={author?.chefPicture} />
+                            <Card.Img className='object-fit-cover border rounded' variant="top" src={author?.chefPicture} />
                         </Card.Header>
                         <Card.Body>
                             <Card.Title>Name : {author?.chef_name}</Card.Title>
