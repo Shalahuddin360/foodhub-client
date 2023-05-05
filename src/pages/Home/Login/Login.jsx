@@ -12,7 +12,7 @@ const Login = () => {
     const [socialSuccess, setSocialSuccess] = useState('');
     const [userLogin, setUserLogin] = useState(null)
     const location = useLocation();
-    console.log('login page location', location)
+    // console.log('login page location', location)
 
     const from = location.state?.from?.pathname || '/'
 
@@ -33,7 +33,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 setUserLogin(loggedUser);
                 event.target.reset();
                 setSuccess('user login in successfully');
@@ -48,12 +48,12 @@ const Login = () => {
             })
             userUpdateProfile(name,photo)
             .then(result=>{
-                console.log(result.user,displayName)
+                // console.log(result.user,displayName)
                 setSuccess('user update successfully')
                 setError('')
             })
             .catch(error=>{
-                console.log(error)
+                // console.log(error)
                 setError(error.message)
             })
         // console.log(email,password)
@@ -66,7 +66,7 @@ const Login = () => {
             .then(result => {
                 const googleUser = result.user;
                 setUserLogin(googleUser);
-                console.log(googleUser);
+                // console.log(googleUser);
                 setSocialSuccess('Google Sign In succesfully');
                 navigate(from, { replace: true })
             })
@@ -81,7 +81,7 @@ const Login = () => {
             .then(result => {
                 const githubUser = result.user;
                 setUserLogin(githubUser);
-                console.log(githubUser)
+                // console.log(githubUser);
                 setSocialSuccess('Google Sign In succesfully');
                 setSocialError('');
                 navigate(from, { replace: true })
