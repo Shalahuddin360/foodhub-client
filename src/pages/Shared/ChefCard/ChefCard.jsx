@@ -10,7 +10,7 @@ const ChefCard = (props) => {
     return (
         <CardGroup>
       <Card>
-        <Card.Img variant="top" src={chefPicture} />
+        <Card.Img className='object-fit-cover border rounded' variant="top" src={chefPicture} />
         <Card.Body>
           <Card.Title>Name: {chef_name}</Card.Title>
           <Card.Text>

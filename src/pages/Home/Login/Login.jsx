@@ -8,6 +8,8 @@ const Login = () => {
     const navigate = useNavigate();
     const [error,setError] = useState('');
     const [success,setSuccess] = useState('');
+    const [socialError,setSocialError] = useState('');
+    const [socialSuccess,setSocialSuccess] = useState('');
     const location = useLocation();
     console.log('login page location', location)
     
@@ -46,11 +48,11 @@ const Login = () => {
         .then(result=>{
             const googleUser = result.user;
              console.log(googleUser)
-             setSuccess('Google Sign In succesfully')
+             setSocialSuccess('Google Sign In succesfully')
            
         })
         .catch(error=>{
-            setError(error.message)
+            setSocialError(error.message)
         })
     }
  const handleGithubSignIn =()=>{
@@ -58,17 +60,17 @@ const Login = () => {
     .then(result=>{
         const githubUser =result.user;
         console.log(githubUser)
-        setSuccess('Google Sign In succesfully')
+        setSocialSuccess('Google Sign In succesfully')
 
     })
     .catch(error=>{
-        setError(error.message)
+        setSocialError(error.message)
     })
  }
     return (
-        <Container className='w-50 mx-auto'>
-            <h3 className='mb-3'> Please Login !!!!!</h3>
-            <Form onSubmit={handleLogin}>
+        <Container className=' mx-auto  mt-4'>
+            <h4 className='mb-5 fw-bold '> Please Login !!!!!</h4>
+            <Form onSubmit={handleLogin} className='w-full lg-w-50 shadow-lg p-3 mb-sm-3 mb-lg-5 bg-body-tertiary rounded'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
@@ -95,14 +97,16 @@ const Login = () => {
        
             </Form>
             <br />
-               <Button onClick={handleGoogleSignIn} variant="primary" className='fw-semibold' type="submit">
+              <div className='d-lg-flex align-items-center'>
+              <Button onClick={handleGoogleSignIn} variant="primary" className='fw-semibold me-4' type="submit">
                     Sign In With Google
                 </Button>
-                <Button onClick={handleGithubSignIn} className='ms-4 fw-semibold' variant="primary" type="submit">
+                <Button onClick={handleGithubSignIn} className=' fw-semibold' variant="primary" type="submit">
                     Login with Github
                 </Button>
-                <p className='text-primary fw-bold' >{success}</p>
-                <p className='text-danger fw-bold' >{error}</p>
+              </div>
+              <p className='text-primary fw-bold' >{socialSuccess}</p>
+                <p className='text-danger fw-bold' >{socialError}</p>
         </Container>
     );
 };

@@ -42,9 +42,9 @@ const Register = () => {
         setAccepted(event.target.checked);
     }
     return (
-        <Container className='w-50 mx-auto'>
-            <h3 className='mb-3'> Please Register !!!!!</h3>
-            <Form onSubmit={handleRegister}>
+        <Container className='mx-auto mt-sm-3 mt-lg-5' fluid="md">
+            <h3 className='mb-3 text-center fw-bold'> Please Register !!!!!</h3>
+            <Form onSubmit={handleRegister} className='w-full w-lg-50  shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter Your Name" required />
@@ -70,13 +70,13 @@ const Register = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check onClick={handleAccepted} type="checkbox" name='accept' 
-                    label={<>Accept<Link to="/terms">Terms And Conditions</Link> </>} />
+                    label={<>Accept<Link to="/terms" className='text-primary ms-2'>Terms And Conditions</Link> </>} />
                 </Form.Group>
                 <Button disabled ={!accepted} variant="primary" type="submit">
                    Register
                 </Button>
                 <br />
-                <Form.Text className="text-secondary">
+                <Form.Text className="text-secondary fw-semibold">
                   Already Have An Account ? <Link to="/login">Login</Link>
                </Form.Text>
                 <Form.Text className="text-primary">

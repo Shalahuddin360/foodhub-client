@@ -22,7 +22,7 @@ const Home = () => {
             <Row className='mb-4'>
                 <Col>
                     <Card className="bg-dark text-white">
-                        <Card.Img src={banner} alt="Card image" />
+                        <Card.Img className='object-fit-cover border rounded' src={banner} alt="Card image" />
                         <Card.ImgOverlay>
                             <Card.Title>Food Hub  Ready For Online Order</Card.Title>
                             <Card.Text>
