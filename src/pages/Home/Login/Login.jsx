@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
-    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub , userUpdateProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -46,8 +46,19 @@ const Login = () => {
                 setError(error.message);
 
             })
+            userUpdateProfile(name,photo)
+            .then(result=>{
+                console.log(result.user,displayName)
+                setSuccess('user update successfully')
+                setError('')
+            })
+            .catch(error=>{
+                console.log(error)
+                setError(error.message)
+            })
         // console.log(email,password)
     }
+
     const handleGoogleSignIn = () => {
         setError('');
         setSuccess('');
@@ -79,6 +90,7 @@ const Login = () => {
                 setSocialError(error.message)
             })
     }
+
     return (
         <Container className=' mx-auto  mt-4'>
             <h4 className='mb-5 fw-bold '> Please Login !!!!!</h4>
